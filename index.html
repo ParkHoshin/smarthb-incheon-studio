@@ -22,6 +22,7 @@
             font-weight: normal;
             font-style: normal;
         }
+
         /* =========================================
            1. 기본 및 레이아웃 변수 설정
            ========================================= */
@@ -58,10 +59,10 @@
         /* =========================================
            2. 상단 헤더 영역 (.top-bar)
            ========================================= */
-           /* =========================================
+        /* =========================================
            상단 헤더 반응형 및 줄바꿈 방지 (새로 추가)
            ========================================= */
-        
+
         /* 1. 상단바 가로 스크롤 허용 (넘칠 경우) */
         .top-bar {
             flex-wrap: nowrap;
@@ -73,6 +74,7 @@
         .top-bar::-webkit-scrollbar {
             height: 6px;
         }
+
         .top-bar::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 10px;
@@ -85,34 +87,58 @@
         .top-bar .sns-pill-btn,
         .top-bar .sns-pill,
         .header-logo {
-            white-space: nowrap; /* 글씨가 두 줄로 깨지는 것 방지 */
-            flex-shrink: 0; /* 요소가 억지로 찌그러지는 것 방지 */
+            white-space: nowrap;
+            /* 글씨가 두 줄로 깨지는 것 방지 */
+            flex-shrink: 0;
+            /* 요소가 억지로 찌그러지는 것 방지 */
         }
 
         /* 4. 화면이 1400px 이하(노트북 등)로 좁아질 때 글씨/여백 축소 */
         @media (max-width: 1400px) {
-            .top-bar { padding: 0 10px; }
-            .header-actions { gap: 4px; margin-right: 0; }
-            .header-center { gap: 4px; }
-            
+            .top-bar {
+                padding: 0 10px;
+            }
+
+            .header-actions {
+                gap: 4px;
+                margin-right: 0;
+            }
+
+            .header-center {
+                gap: 4px;
+            }
+
             /* 버튼, 라벨류 글씨와 여백을 살짝 줄임 */
-            .top-bar button, 
+            .top-bar button,
             .top-bar .option-item,
             .top-bar .sns-standalone-btn,
             .top-bar .sns-pill-btn {
                 font-size: 11px !important;
                 padding: 5px 8px !important;
             }
-            
-            .header-logo { font-size: 15px; }
-            
+
+            .header-logo {
+                font-size: 15px;
+            }
+
             /* SNS 입력창 크기 축소 */
-            .sns-pill input { width: 65px; font-size: 11px; padding: 0 6px; }
-            .sns-pill, .sns-standalone-btn { height: 28px; }
-            
+            .sns-pill input {
+                width: 65px;
+                font-size: 11px;
+                padding: 0 6px;
+            }
+
+            .sns-pill,
+            .sns-standalone-btn {
+                height: 28px;
+            }
+
             /* 구분선 여백 축소 */
-            .top-bar div[style*="width: 1px"] { margin: 0 4px !important; }
+            .top-bar div[style*="width: 1px"] {
+                margin: 0 4px !important;
+            }
         }
+
         .top-bar {
             height: var(--header-height);
             background: var(--panel-bg);
@@ -1015,36 +1041,50 @@
             opacity: 1;
             width: 12px;
         }
-       /* =========================================
+
+        /* =========================================
            작업 영역 상단 툴바 (사이즈 + 과목 + 되돌리기)
            ========================================= */
         .workspace-top-bar {
             width: 100%;
-            max-width: 1050px; /* 🌟 800px -> 1050px로 넓혀서 한 줄로 길게 펴줌 */
-            margin-bottom: 12px; /* 🌟 하단 여백을 줄여서 캔버스 세로 스크롤 방지 */
+            max-width: 1050px;
+            /* 🌟 800px -> 1050px로 넓혀서 한 줄로 길게 펴줌 */
+            margin-bottom: 12px;
+            /* 🌟 하단 여백을 줄여서 캔버스 세로 스크롤 방지 */
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             border: 1px solid var(--border-light);
             display: flex;
             align-items: center;
-            padding: 8px 16px; /* 🌟 위아래 패딩(뚱뚱함) 다이어트 */
+            padding: 8px 16px;
+            /* 🌟 위아래 패딩(뚱뚱함) 다이어트 */
             transition: justify-content 0.3s ease;
-            white-space: nowrap; /* 툴바 안의 요소들이 밑으로 떨어지지 않게 고정 */
-            overflow-x: auto; /* 창이 너무 좁아지면 가로 스크롤만 생기게 함 */
+            white-space: nowrap;
+            /* 툴바 안의 요소들이 밑으로 떨어지지 않게 고정 */
+            overflow-x: auto;
+            /* 창이 너무 좁아지면 가로 스크롤만 생기게 함 */
         }
 
         /* 윈도우용 가로 스크롤바 얇게 */
-        .workspace-top-bar::-webkit-scrollbar { height: 6px; }
-        .workspace-top-bar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .workspace-top-bar::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .workspace-top-bar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
 
         .size-btn {
             margin: 0;
             font-weight: 700;
             border-radius: 30px;
-            padding: 6px 14px; /* 높이 약간 축소 */
+            padding: 6px 14px;
+            /* 높이 약간 축소 */
             transition: all 0.2s;
-            white-space: nowrap !important; /* 글자 두 줄로 깨짐 방지 */
+            white-space: nowrap !important;
+            /* 글자 두 줄로 깨짐 방지 */
         }
 
         .size-btn.active {
@@ -1066,9 +1106,11 @@
         }
 
         /* 과목 및 시안 버튼들 줄바꿈 방지 */
-        .subject-label, .subject-title {
-            white-space: nowrap !important; 
-            padding: 6px 16px; /* 버튼 높이 살짝 축소 */
+        .subject-label,
+        .subject-title {
+            white-space: nowrap !important;
+            padding: 6px 16px;
+            /* 버튼 높이 살짝 축소 */
         }
 
         @media (max-width: 1200px) {
@@ -1076,26 +1118,131 @@
                 display: none !important;
             }
         }
-
     </style>
 </head>
 
 <body>
 
     <div style="width: 0; height: 0; overflow: hidden; position: absolute; left: -9999px;">
+
+        <style>
+            .login-bg-slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: #0f172a;
+                overflow: hidden;
+            }
+
+            .login-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                animation: bgSlide 18s infinite;
+                /* 18초 동안 3장 반복 */
+            }
+
+            /* 🌟 확정된 이미지 3장 */
+            .login-slide:nth-child(1) {
+                background-image: url('https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=2000&auto=format&fit=crop');
+                animation-delay: 0s;
+            }
+
+            .login-slide:nth-child(2) {
+                background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
+                animation-delay: 6s;
+            }
+
+            .login-slide:nth-child(3) {
+                background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop');
+                animation-delay: 12s;
+            }
+
+            /* 부드럽게 겹치고 살짝 줌인되는 고급 효과 */
+            @keyframes bgSlide {
+
+                0%,
+                28% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                33%,
+                95% {
+                    opacity: 0;
+                    transform: scale(1.05);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            /* 🌟 밝아진 필터 효과 (투명도를 낮춰서 이미지가 화사하게 보임!) */
+            .login-overlay-filter {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                /* 기존 0.7 ~ 0.85 였던 진한 투명도를 0.3 ~ 0.5로 낮췄어! */
+                background: linear-gradient(rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.2));
+            }
+        </style>
+
         <div id="loginOverlay"
-            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--surface); z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div
-                style="background: white; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); width: 320px; text-align: center;">
-                <h2 style="color: var(--primary); margin-top: 0; margin-bottom: 8px;">스마트해법 인천남부지사 스튜디오</h2>
-                <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 24px;">인천남부지사 원장님 전용 로그인</p>
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+            <div class="login-bg-slider">
+                <div class="login-slide"></div>
+                <div class="login-slide"></div>
+                <div class="login-slide"></div>
+                <div class="login-overlay-filter"></div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 35px;">
+                <h1 style="font-size: 32px; margin-bottom: 12px; font-weight: 800; letter-spacing: -1px;
+                           color: #f8fafc; /* 완전 흰색보다 살짝 차분한 색이 음각에 잘 어울려요 */
+                           /* 👇 마법의 음각 그림자 코드 */
+                           text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.4), 
+                                         2px 2px 4px rgba(0, 0, 0, 0.8),     
+                                         0px 0px 15px rgba(0, 0, 0, 0.5);">
+                    원장님의 열정이 아이들의 밝은 미래를 만듭니다.
+                </h1>
+                <p style="font-size: 19px; margin: 0; font-weight: 600;
+                          color: #e2e8f0;
+                          text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+                                        1px 1px 3px rgba(0, 0, 0, 0.8);">
+                    오늘도 스마트해법과 함께 힘찬 하루 되세요! ☀️
+                </p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 40px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+                        width: 400px; text-align: center;">
+                <h2
+                    style="color: var(--primary); margin-top: 0; margin-bottom: 8px; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; white-space: nowrap;">
+                    스마트해법 인천남부지사 스튜디오
+                </h2>
+                <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 28px; font-weight: 600;">인천남부지사 원장님 전용
+                    로그인</p>
+
                 <input type="text" id="loginId" placeholder="아이디"
-                    style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid var(--border-light); border-radius: 8px; box-sizing: border-box;">
+                    style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid var(--border-light); border-radius: 8px; box-sizing: border-box; font-size: 14px; background: #f8fafc;">
                 <input type="password" id="loginPw" placeholder="비밀번호"
-                    style="width: 100%; padding: 12px; margin-bottom: 24px; border: 1px solid var(--border-light); border-radius: 8px; box-sizing: border-box;"
+                    style="width: 100%; padding: 14px; margin-bottom: 28px; border: 1px solid var(--border-light); border-radius: 8px; box-sizing: border-box; font-size: 14px; background: #f8fafc;"
                     onkeypress="if(event.key === 'Enter') checkLogin()">
                 <button onclick="checkLogin()" class="btn-primary"
-                    style="width: 100%; padding: 14px; font-size: 15px;">접속하기</button>
+                    style="width: 100%; padding: 14px; font-size: 16px; font-weight: 800; border-radius: 8px;">스튜디오
+                    접속하기</button>
             </div>
         </div>
         <canvas id="chartWorkerCanvas" width="400" height="300"></canvas>
@@ -1358,23 +1505,26 @@
                         <label
                             style="font-size: 12px; font-weight: 700; color: var(--text-sub); margin-bottom: 6px; display: block;">폰트
                             스타일</label>
-                       <select id="textFont">
+                        <select id="textFont">
                             <optgroup label="✅ 깔끔한 고딕/명조">
                                 <option value="'Pretendard', sans-serif">프리텐다드 (추천)</option>
                                 <option value="'Noto Sans KR', sans-serif">본고딕 (기본 고딕)</option>
                                 <option value="'Noto Serif KR', serif">본명조 (기본 명조)</option>
                                 <option value="'Malgun Gothic', sans-serif">맑은 고딕</option>
                             </optgroup>
-                            
+
                             <optgroup label="📢 굵은 제목용">
-                                <option value="'Bagel Fat One', cursive" style="font-weight:bold; color:#e91e63;">🥯 베이글 (뚱뚱/시선강탈)</option>
+                                <option value="'Bagel Fat One', cursive" style="font-weight:bold; color:#e91e63;">🥯 베이글
+                                    (뚱뚱/시선강탈)</option>
                                 <option value="'Black Han Sans', sans-serif">검은고딕 (강조!)</option>
                                 <option value="'Do Hyeon', sans-serif">도현체 (둥근 제목)</option>
                             </optgroup>
-                            
+
                             <optgroup label="💖 감성 & 귀여운 손글씨">
-                                <option value="'Bazzi', cursive" style="font-weight:bold; color:#068ae3;">🎮 넥슨 배찌체 (초등부 찰떡)</option>
-                                <option value="'Hi Melody', cursive" style="font-weight:bold; color:#10b981;">✨ 하이멜로디 (감성/이벤트)</option>
+                                <option value="'Bazzi', cursive" style="font-weight:bold; color:#068ae3;">🎮 넥슨 배찌체 (초등부
+                                    찰떡)</option>
+                                <option value="'Hi Melody', cursive" style="font-weight:bold; color:#10b981;">✨ 하이멜로디
+                                    (감성/이벤트)</option>
                                 <option value="'Jua', sans-serif">🐻 배민 주아 (둥글귀여움)</option>
                                 <option value="'Nanum Pen Script', cursive">🖊️ 나눔펜글씨 (자연스러움)</option>
                                 <option value="'Single Day', cursive">😊 싱글데이 (해맑음)</option>
@@ -1475,7 +1625,8 @@
                             style="flex: 2; accent-color: var(--primary);">
                     </div>
                     <div class="helper-text" style="margin-top: 10px; padding: 8px; background: #e0f2fe;">💡 캔버스에서 요소를
-                        <b>클릭</b>한 후 색상과 굵기를 변경해 보세요!</div>
+                        <b>클릭</b>한 후 색상과 굵기를 변경해 보세요!
+                    </div>
                 </div>
 
                 <div style="flex: 1; overflow-y: auto; padding-right: 10px;">
@@ -1546,15 +1697,18 @@
 
 
             <div id="workspace-top-bar" class="workspace-top-bar" style="justify-content: center;">
-                
+
                 <div style="display: flex; align-items: center; gap: 6px; margin-right: 12px;">
-                    <button class="btn-outline" style="padding: 6px 10px; font-size: 14px;" onclick="undo()" title="되돌리기 (Ctrl+Z)">↩️</button>
-                    <button class="btn-outline" style="padding: 6px 10px; font-size: 14px;" onclick="redo()" title="다시실행 (Ctrl+Y)">↪️</button>
+                    <button class="btn-outline" style="padding: 6px 10px; font-size: 14px;" onclick="undo()"
+                        title="되돌리기 (Ctrl+Z)">↩️</button>
+                    <button class="btn-outline" style="padding: 6px 10px; font-size: 14px;" onclick="redo()"
+                        title="다시실행 (Ctrl+Y)">↪️</button>
                 </div>
 
                 <div id="size-selector" style="display: flex; align-items: center; gap: 8px;">
                     <label class="option-item size-btn active" id="lbl-size-square">
-                        <input type="radio" name="canvasSize" value="square" checked onchange="changeCanvasSize(this.value)">
+                        <input type="radio" name="canvasSize" value="square" checked
+                            onchange="changeCanvasSize(this.value)">
                         1:1 (인스타)
                     </label>
                     <label class="option-item size-btn" id="lbl-size-a4">
@@ -1563,15 +1717,19 @@
                     </label>
                 </div>
 
-                <div id="top-bar-divider" style="display: none; width: 2px; height: 20px; background: var(--border-light); margin: 0 16px;"></div>
+                <div id="top-bar-divider"
+                    style="display: none; width: 2px; height: 20px; background: var(--border-light); margin: 0 16px;">
+                </div>
 
                 <div id="subject-selector-inner" style="display: none; align-items: center; gap: 10px;">
                     <span class="subject-title">과목 선택:</span>
-                    <input type="radio" id="sub-math" name="subjectSelect" value="math" checked onchange="applySubjectTemplate()">
+                    <input type="radio" id="sub-math" name="subjectSelect" value="math" checked
+                        onchange="applySubjectTemplate()">
                     <label for="sub-math" class="subject-label math">📐 수학</label>
                     <input type="radio" id="sub-eng" name="subjectSelect" value="eng" onchange="applySubjectTemplate()">
                     <label for="sub-eng" class="subject-label eng">🔤 영어</label>
-                    <input type="radio" id="sub-both" name="subjectSelect" value="both" onchange="applySubjectTemplate()">
+                    <input type="radio" id="sub-both" name="subjectSelect" value="both"
+                        onchange="applySubjectTemplate()">
                     <label for="sub-both" class="subject-label both">📚 영수 종합</label>
                 </div>
 
@@ -1717,6 +1875,17 @@
         //                 eng: { /* 생략 */ }
         //             }
         //         }
+        //        4. 과목 ❌, 사이즈 ❌, 시안 여러 개 ⭕
+        //        {
+        //            id: 'f_sq_103',
+        //            name: '🎉 연말 감사 이벤트 (3종)',
+        //            isMultiSubject: false, // 과목 버튼 숨김
+        //            src: [
+        //                './images/templates/event_v1.png',
+        //                './images/templates/event_v2.png',
+        //                './images/templates/event_v3.png'
+        //            ] // 배열을 사용해 여러 시안을 나열!
+        //        }
         // =========================================================
         const fixedTemplates = [
             // 1번: 과목별(수학/영어/종합) + 사이즈별(인스타/A4) 이미지가 모두 필요한 경우
@@ -1726,24 +1895,29 @@
                 isMultiSubject: true,
                 src: {
                     math: {
-                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%88%98%ED%95%99_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png','https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%88%98%ED%95%99_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'],
-                        a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%88%98%ED%95%99_A4.png','https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%88%98%ED%95%99_A4.png']
+                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%88%98%ED%95%99_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png', 'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%88%98%ED%95%99_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'],
+                        a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%88%98%ED%95%99_A4.png', 'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%88%98%ED%95%99_A4.png']
                     },
                     eng: {
-                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/%EC%98%81%EC%96%B4%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EC%95%9E%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png','https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/%EC%98%81%EC%96%B4%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EB%92%B7%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'],
-                        a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%98%81%EC%96%B4_A4.png','https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%98%81%EC%96%B4_A4.png']
+                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/%EC%98%81%EC%96%B4%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EC%95%9E%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png', 'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/%EC%98%81%EC%96%B4%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EB%92%B7%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'],
+                        a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%98%81%EC%96%B4_A4.png', 'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%98%81%EC%96%B4_A4.png']
                     },
                     both: {
-                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/%EC%98%81%EC%88%98%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EC%95%9E%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png','https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/%EC%98%81%EC%88%98%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EB%92%B7%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'],
-                        a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%98%81%EC%88%98_A4.png','https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%98%81%EC%88%98_A4.png']
+                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/%EC%98%81%EC%88%98%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EC%95%9E%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png', 'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/%EC%98%81%EC%88%98%20%EA%B4%80%EB%A6%AC%EC%B0%A8%EC%9B%90(%EB%92%B7%EB%A9%B4)_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'],
+                        a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EC%95%9E%EB%A9%B4)_%EC%98%81%EC%88%98_A4.png', 'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%88%98/2026%20%EC%8B%A0%ED%95%99%EA%B8%B0%20%EC%88%98%EA%B0%95%EC%83%9D%EB%AA%A8%EC%A7%91%20%EC%A0%84%EB%8B%A8(%EB%92%B7%EB%A9%B4)_%EC%98%81%EC%88%98_A4.png']
                     }
                 }
             },
             {
                 id: 'f_sq_12', name: '🎒 신학기 학습 로드맵',
-                src: { square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%88%98%ED%95%99_%EC%8B%A0%ED%95%99%EA%B8%B0%20%ED%95%99%EC%8A%B5%20%EB%A1%9C%EB%93%9C%EB%A7%B5_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'], a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%88%98%ED%95%99_%EC%8B%A0%ED%95%99%EA%B8%B0%20%ED%95%99%EC%8A%B5%20%EB%A1%9C%EB%93%9C%EB%A7%B5_A4.png'] }
+                isMultiSubject: true,
+                src: {
+                    math: { square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%88%98%ED%95%99_%EC%8B%A0%ED%95%99%EA%B8%B0%20%ED%95%99%EC%8A%B5%20%EB%A1%9C%EB%93%9C%EB%A7%B5_%EC%A0%95%EC%82%		AC%EA%B0%81%ED%98%95.png'], a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%88%98%ED%95%99/%EC%88%98%ED%95%99_%EC%8B%A0%ED%95%99%EA%B8%B0%20%ED%95%99%EC%8A%B5%20%EB%A1%9C%EB%93%9C%EB%A7%B5_A4.png'] }
+                    , eng: {
+                        square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/%EC%98%81%EC%96%B4_%EC%8B%A0%ED%95%99%EA%B8%B0%20%ED%95%99%EC%8A%B5%20%EB%A1%9C%EB%93%9C%EB%A7%B5_%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'], a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%88%98%EA%B0%95%EC%83%9D%20%EB%AA%A8%EC%A7%91/%EC%98%81%EC%96%B4/%EC%98%81%EC%96%B4_%EC%8B%A0%ED%95%99%EA%B8%B0%20%ED%95%99%EC%8A%B5%20%EB%A1%9C%EB%93%9C%EB%A7%B5_A4.png']
+                    }
+                }
             },
-            // 2~10번: 과목 구분 없이 단일 이미지이되, 사이즈별(인스타/A4)로 나눈 경우
             {
                 id: 'f_sq_2', name: '🏖️ 여름방학 특강 안내문',
                 src: { square: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%97%AC%EB%A6%84%EB%B0%A9%ED%95%99/%EC%97%AC%EB%A6%84%EB%B0%A9%ED%95%99%20%ED%8A%B9%EA%B0%95%20%EC%95%88%EB%82%B4%EB%AC%B8%20%EA%B3%B5%ED%86%B5%20%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95.png'], a4: ['https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/%EC%97%AC%EB%A6%84%EB%B0%A9%ED%95%99/%EC%97%AC%EB%A6%84%EB%B0%A9%ED%95%99%20%ED%8A%B9%EA%B0%95%20%EC%95%88%EB%82%B4%EB%AC%B8%20%EA%B3%B5%ED%86%B5%20A4.png'] }
@@ -1780,8 +1954,27 @@
                 id: 'f_sq_10', name: '🌕 추석 연휴 휴원안내',
                 src: { square: [''], a4: [''] }
             },
-
-            // 11번: 과목 버튼은 숨기고(false), 사이즈별로 4개의 디자인 시안을 제공하는 경우
+            {
+                id: 'f_sq_13',
+                name: '🧮수학 표지 12종',
+                isMultiSubject: false,
+                src: {
+                    a4: [
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85-1.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85-2.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85-3.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85-4.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85-5.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85-6.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85_%EA%B3%B5%EB%9E%80-1.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85_%EA%B3%B5%EB%9E%80-2.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85_%EA%B3%B5%EB%9E%80-3.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85_%EA%B3%B5%EB%9E%80-4.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85_%EA%B3%B5%EB%9E%80-5.jpg',
+                        'https://raw.githubusercontent.com/ParkHoshin/image/refs/heads/main/(%EC%88%98%ED%95%99)%ED%95%99%EC%8A%B5%ED%91%9C%EC%A7%8012%EC%A2%85/%ED%95%99%EC%9B%90%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9A%A9%20%ED%91%9C%EC%A7%806%EC%A2%85_%EA%B3%B5%EB%9E%80-6.jpg'
+                    ]
+                }
+            },
             {
                 id: 'f_sq_11',
                 name: '🔠스마트해법영어 SEPT',
@@ -1942,13 +2135,13 @@
         const loadedBgImages = {};
         for (const bgId in imageBackgrounds) {
             loadedBgImages[bgId] = { square: new Image(), a4: new Image() };
-            
+
             ['square', 'a4'].forEach(size => {
                 loadedBgImages[bgId][size].crossOrigin = "Anonymous";
                 loadedBgImages[bgId][size].src = imageBackgrounds[bgId][size];
                 // 로딩 완료 시, 현재 화면에 띄워야 하는 배경이면 즉시 새로고침
-                loadedBgImages[bgId][size].onload = () => { 
-                    if (document.querySelector('input[name="bg"]:checked')?.value === bgId) drawPreview(); 
+                loadedBgImages[bgId][size].onload = () => {
+                    if (document.querySelector('input[name="bg"]:checked')?.value === bgId) drawPreview();
                 };
             });
         }
@@ -2026,7 +2219,7 @@
                     const btn = document.createElement('button');
                     btn.type = 'button';
                     // 버튼 ID가 겹치지 않도록 사이즈 타입을 ID에 포함시킴
-                    btn.id = `btn_${tmpl.id}_${type}`; 
+                    btn.id = `btn_${tmpl.id}_${type}`;
                     btn.className = `tmpl-btn ${type === 'square' ? 'insta-tmpl-btn' : 'a4-tmpl-btn'}`;
                     btn.innerText = tmpl.name;
                     btn.onclick = function () { applyTemplate(type, tmpl, this); };
@@ -2186,7 +2379,7 @@
         // =========================================================
         // 8. 기존 요소 제어 로직
         // =========================================================
-       function toggleLogo(cb) {
+        function toggleLogo(cb) {
             const brand = cb.value;
             if (cb.checked) {
                 const img = new Image();
@@ -2197,7 +2390,7 @@
                     const newLogo = { id: 'logo_' + brand, type: 'logo', brand: brand, img: img, x: canvas.width - w - 370, y: 80 + (logoItems.length * (h + 20)), w: w, h: h, ratio: ratio, colorType: currentColor };
                     logoItems.push(newLogo); selectedItem = newLogo; drawPreview(); saveState();
                 };
-                
+
                 // 🌟 캐시 우회
                 if (logoData[brand]) {
                     const src = logoData[brand];
@@ -2298,11 +2491,11 @@
         document.getElementById('customText').addEventListener('input', function (e) { if (selectedItem && selectedItem.type === 'text') { selectedItem.text = e.target.value; drawPreview(); } });
         document.getElementById('textColor').addEventListener('input', function (e) { if (selectedItem && selectedItem.type === 'text') { selectedItem.color = e.target.value; drawPreview(); } });
         // 🌟 수정된 폰트 변경 이벤트 (다운로드 대기 기능 추가)
-        document.getElementById('textFont').addEventListener('change', async function (e) { 
-            if (selectedItem && selectedItem.type === 'text') { 
+        document.getElementById('textFont').addEventListener('change', async function (e) {
+            if (selectedItem && selectedItem.type === 'text') {
                 const newFont = e.target.value;
-                selectedItem.fontFamily = newFont; 
-                
+                selectedItem.fontFamily = newFont;
+
                 // 1. 브라우저에게 새 폰트를 캔버스 메모리에 확실히 올리라고 지시 (기다림)
                 try {
                     await document.fonts.load(`16px ${newFont}`);
@@ -2311,15 +2504,15 @@
                 }
 
                 // 2. 폰트 준비가 완벽하게 끝나면 그제서야 캔버스를 다시 그림
-                drawPreview(); 
-                
+                drawPreview();
+
                 // 3. 만약 더블클릭해서 글씨를 한창 수정 중일 때 폰트를 바꿨다면, 입력창 폰트도 즉시 변경
                 if (editingTextItem === selectedItem) {
                     document.getElementById('inlineEditor').style.fontFamily = newFont;
                 }
-                
-                saveState(); 
-            } 
+
+                saveState();
+            }
         });
         document.getElementById('textStrokeColor').addEventListener('input', function (e) { if (selectedItem && selectedItem.type === 'text') { selectedItem.strokeColor = e.target.value; drawPreview(); } });
         document.getElementById('textStrokeWidth').addEventListener('input', function (e) { if (selectedItem && selectedItem.type === 'text') { selectedItem.strokeWidth = parseInt(e.target.value); drawPreview(); } });
@@ -2550,7 +2743,7 @@
         function createGradient(color1, color2) { let grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height); grad.addColorStop(0, color1); grad.addColorStop(1, color2); return grad; }
 
         function drawPreview() {
-            const bgInput = document.querySelector('input[name="bg"]:checked'); 
+            const bgInput = document.querySelector('input[name="bg"]:checked');
             const bgType = bgInput ? bgInput.value : 'solid1';
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -2578,17 +2771,17 @@
                 else if (bgType === 'pattern3') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.strokeStyle = '#f4f4f4'; ctx.lineWidth = 15; for (let i = -canvas.width; i < canvas.width * 2; i += 50) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i - canvas.height, canvas.height); ctx.stroke(); } }
                 else if (bgType === 'pattern4') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.strokeStyle = '#f1f5f9'; ctx.lineWidth = 15; for (let i = -canvas.width; i < canvas.width * 2; i += 40) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i - canvas.height, canvas.height); ctx.stroke(); ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i + canvas.height, canvas.height); ctx.stroke(); } }
                 else if (bgType === 'pattern5') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.strokeStyle = '#f1f5f9'; ctx.lineWidth = 2; for (let i = 0; i < canvas.width; i += 30) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke(); } ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 4; for (let i = 0; i < canvas.width; i += 150) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke(); } }
-                
+
                 // 🎨 고급 세련된 공식 배경 3종
                 else if (bgType.startsWith('offical_bg_')) {
                     const bgIdx = bgType.split('_')[2];
                     ctx.save();
-                    
+
                     if (bgIdx === '1') {
                         let grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
                         grad.addColorStop(0, '#001a24'); grad.addColorStop(0.5, '#003a4d'); grad.addColorStop(1, '#006d77');
                         ctx.fillStyle = grad; ctx.fillRect(0, 0, canvas.width, canvas.height);
-                        for(let i=0; i<3; i++) {
+                        for (let i = 0; i < 3; i++) {
                             let glowX = canvas.width * (0.2 + i * 0.3); let glowY = canvas.height * (0.3 + i * 0.2);
                             let glow = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, 500);
                             glow.addColorStop(0, 'rgba(48, 230, 231, 0.15)'); glow.addColorStop(1, 'rgba(48, 230, 231, 0)');
@@ -2600,32 +2793,32 @@
                             let size = Math.random() * 1.5 + 0.5; ctx.globalAlpha = Math.random() * 0.7 + 0.3;
                             ctx.beginPath(); ctx.arc(x, y, size, 0, Math.PI * 2); ctx.fill();
                         }
-                    } 
+                    }
                     else if (bgIdx === '2') {
                         let grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
                         grad.addColorStop(0, '#0a1128'); grad.addColorStop(0.6, '#1c3b82'); grad.addColorStop(1, '#3a7bd5');
                         ctx.fillStyle = grad; ctx.fillRect(0, 0, canvas.width, canvas.height);
                         ctx.lineWidth = 2; ctx.lineCap = 'round';
-                        for(let i=0; i<6; i++) {
+                        for (let i = 0; i < 6; i++) {
                             let startY = (i * 200) % canvas.height; ctx.beginPath(); ctx.moveTo(-100, startY); ctx.lineTo(canvas.width + 100, startY - 300 + (Math.random() * 100));
                             let lineGrad = ctx.createLinearGradient(0, 0, canvas.width, 0);
                             lineGrad.addColorStop(0, 'rgba(255,255,255,0)'); lineGrad.addColorStop(0.5, 'rgba(255,255,255,0.3)'); lineGrad.addColorStop(1, 'rgba(255,255,255,0)');
                             ctx.strokeStyle = lineGrad; ctx.stroke();
                         }
-                        for(let i=0; i<12; i++) {
+                        for (let i = 0; i < 12; i++) {
                             let x = (Math.sin(i * 31) * 0.5 + 0.5) * canvas.width; let y = (Math.cos(i * 47) * 0.5 + 0.5) * canvas.height; let s = (i % 3) + 2;
                             ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                            ctx.beginPath(); ctx.ellipse(x, y, s, s*4, 0, 0, Math.PI*2); ctx.fill();
-                            ctx.beginPath(); ctx.ellipse(x, y, s*4, s, 0, 0, Math.PI*2); ctx.fill();
+                            ctx.beginPath(); ctx.ellipse(x, y, s, s * 4, 0, 0, Math.PI * 2); ctx.fill();
+                            ctx.beginPath(); ctx.ellipse(x, y, s * 4, s, 0, 0, Math.PI * 2); ctx.fill();
                         }
-                    } 
+                    }
                     else if (bgIdx === '3') {
-                        let grad = ctx.createRadialGradient(canvas.width/2, 0, 0, canvas.width/2, 0, canvas.height*1.2);
+                        let grad = ctx.createRadialGradient(canvas.width / 2, 0, 0, canvas.width / 2, 0, canvas.height * 1.2);
                         grad.addColorStop(0, '#0f2027'); grad.addColorStop(0.5, '#203a43'); grad.addColorStop(1, '#2c5364');
                         ctx.fillStyle = grad; ctx.fillRect(0, 0, canvas.width, canvas.height);
                         ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)'; ctx.lineWidth = 1;
-                        for(let i=0; i<canvas.width; i+=60) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke(); }
-                        for(let i=0; i<canvas.height; i+=60) { ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke(); }
+                        for (let i = 0; i < canvas.width; i += 60) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke(); }
+                        for (let i = 0; i < canvas.height; i += 60) { ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke(); }
                         ctx.beginPath(); ctx.moveTo(0, canvas.height * 0.85); ctx.bezierCurveTo(canvas.width * 0.3, canvas.height * 0.70, canvas.width * 0.7, canvas.height * 0.95, canvas.width, canvas.height * 0.75); ctx.lineTo(canvas.width, canvas.height); ctx.lineTo(0, canvas.height);
                         ctx.fillStyle = 'rgba(6, 138, 227, 0.15)'; ctx.fill();
                         ctx.beginPath(); ctx.moveTo(0, canvas.height * 0.9); ctx.bezierCurveTo(canvas.width * 0.4, canvas.height * 0.85, canvas.width * 0.6, canvas.height * 1.0, canvas.width, canvas.height * 0.85); ctx.lineTo(canvas.width, canvas.height); ctx.lineTo(0, canvas.height);
@@ -2633,12 +2826,12 @@
                     }
                     ctx.restore();
                 }
-                
+
                 // 🌸 맞춤 이미지 배경 (꽃 테두리 등) 자동 렌더링
                 else if (typeof loadedBgImages !== 'undefined' && loadedBgImages[bgType]) {
                     const currentSize = document.querySelector('input[name="canvasSize"]:checked') ? document.querySelector('input[name="canvasSize"]:checked').value : 'square';
                     const bgImg = loadedBgImages[bgType][currentSize];
-                    
+
                     if (bgImg && bgImg.complete && bgImg.naturalWidth !== 0) {
                         ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
                     } else {
@@ -2650,14 +2843,14 @@
 
             // 2. 템플릿 이미지가 있을 경우 그리기 (비율에 맞게 조정)
             if (currentTemplateImg) {
-                let imgRatio = currentTemplateImg.width / currentTemplateImg.height; 
-                let canvasRatio = canvas.width / canvas.height; 
+                let imgRatio = currentTemplateImg.width / currentTemplateImg.height;
+                let canvasRatio = canvas.width / canvas.height;
                 let drawWidth, drawHeight, offsetX = 0, offsetY = 0;
-                
-                if (imgRatio > canvasRatio) { 
-                    drawHeight = canvas.height; drawWidth = currentTemplateImg.width * (canvas.height / currentTemplateImg.height); offsetX = (canvas.width - drawWidth) / 2; 
-                } else { 
-                    drawWidth = canvas.width; drawHeight = currentTemplateImg.height * (canvas.width / currentTemplateImg.width); offsetY = (canvas.height - drawHeight) / 2; 
+
+                if (imgRatio > canvasRatio) {
+                    drawHeight = canvas.height; drawWidth = currentTemplateImg.width * (canvas.height / currentTemplateImg.height); offsetX = (canvas.width - drawWidth) / 2;
+                } else {
+                    drawWidth = canvas.width; drawHeight = currentTemplateImg.height * (canvas.width / currentTemplateImg.width); offsetY = (canvas.height - drawHeight) / 2;
                 }
                 ctx.drawImage(currentTemplateImg, offsetX, offsetY, drawWidth, drawHeight);
             }
@@ -2668,19 +2861,19 @@
             // 4. 텍스트 그리기
             textItems.forEach(item => {
                 if (editingTextItem && editingTextItem.id === item.id) return;
-                ctx.save(); 
-                ctx.font = `bold ${item.fontSize}px ${item.fontFamily}`; 
+                ctx.save();
+                ctx.font = `bold ${item.fontSize}px ${item.fontFamily}`;
                 item.w = ctx.measureText(item.text).width;
-                
-                if (item.shadowBlur && item.shadowBlur > 0) { 
-                    ctx.shadowColor = item.shadowColor || '#000000'; ctx.shadowBlur = item.shadowBlur; ctx.shadowOffsetX = item.shadowBlur * 0.3; ctx.shadowOffsetY = item.shadowBlur * 0.3; 
+
+                if (item.shadowBlur && item.shadowBlur > 0) {
+                    ctx.shadowColor = item.shadowColor || '#000000'; ctx.shadowBlur = item.shadowBlur; ctx.shadowOffsetX = item.shadowBlur * 0.3; ctx.shadowOffsetY = item.shadowBlur * 0.3;
                 }
-                if (item.strokeWidth && item.strokeWidth > 0) { 
-                    ctx.strokeStyle = item.strokeColor || '#ffffff'; ctx.lineWidth = item.strokeWidth; ctx.lineJoin = 'round'; ctx.strokeText(item.text, item.x, item.y); 
+                if (item.strokeWidth && item.strokeWidth > 0) {
+                    ctx.strokeStyle = item.strokeColor || '#ffffff'; ctx.lineWidth = item.strokeWidth; ctx.lineJoin = 'round'; ctx.strokeText(item.text, item.x, item.y);
                 }
-                
+
                 ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
-                ctx.fillStyle = item.color; ctx.fillText(item.text, item.x, item.y); 
+                ctx.fillStyle = item.color; ctx.fillText(item.text, item.x, item.y);
                 ctx.restore();
             });
 
@@ -2690,11 +2883,11 @@
                     const isBgSolid4 = (bgType === 'solid4' && !currentTemplateImg);
                     const shouldBeWhite = logo.colorType === 'white' || (!logo.colorType && isBgSolid4);
 
-                    if (shouldBeWhite) { ctx.filter = 'brightness(0) invert(1)'; } 
+                    if (shouldBeWhite) { ctx.filter = 'brightness(0) invert(1)'; }
                     else { ctx.filter = 'none'; }
-                    
+
                     ctx.drawImage(logo.img, logo.x, logo.y, logo.w, logo.h);
-                    ctx.filter = 'none'; 
+                    ctx.filter = 'none';
                 }
             });
 
@@ -2705,16 +2898,16 @@
                 ctx.save();
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.7)'; ctx.shadowBlur = 4;
                 ctx.strokeStyle = '#068ae3'; ctx.lineWidth = 2.5; ctx.setLineDash([6, 6]);
-                ctx.strokeRect(box.x - offset, box.y - offset, box.w + offset * 2, box.h + offset * 2); 
+                ctx.strokeRect(box.x - offset, box.y - offset, box.w + offset * 2, box.h + offset * 2);
                 ctx.setLineDash([]);
                 ctx.restore();
 
                 function drawHandle(x, y, radius, color) {
                     ctx.save();
-                    ctx.shadowColor = 'rgba(0, 0, 0, 0.25)'; ctx.shadowBlur = 4; ctx.shadowOffsetY = 2; 
+                    ctx.shadowColor = 'rgba(0, 0, 0, 0.25)'; ctx.shadowBlur = 4; ctx.shadowOffsetY = 2;
                     ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x, y, radius, 0, Math.PI * 2); ctx.fill();
-                    ctx.shadowColor = 'transparent'; 
-                    ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 2.5; ctx.stroke(); 
+                    ctx.shadowColor = 'transparent';
+                    ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 2.5; ctx.stroke();
                     ctx.restore();
                 }
 
@@ -2731,9 +2924,9 @@
                     // 우측 상단 삭제(X) 버튼
                     let dx = box.x + box.w + offset; let dy = box.y - offset;
                     drawHandle(dx, dy, handleRadius, '#ef4444');
-                    
+
                     ctx.strokeStyle = 'white'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath();
-                    let s = handleRadius * 0.45; 
+                    let s = handleRadius * 0.45;
                     ctx.moveTo(dx - s, dy - s); ctx.lineTo(dx + s, dy + s); ctx.moveTo(dx + s, dy - s); ctx.lineTo(dx - s, dy + s); ctx.stroke();
                 }
             }
@@ -2744,7 +2937,7 @@
                 let guideColor = (bgType === 'solid4' || bgType === 'solid3' || bgType === 'grad1' || currentTemplateImg) ? '#ffffff' : '#068ae3';
                 ctx.shadowColor = (guideColor === '#ffffff') ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.8)';
                 ctx.shadowBlur = 4; ctx.strokeStyle = guideColor;
-                
+
                 if (snapLineX) { ctx.beginPath(); ctx.moveTo(canvas.width / 2, 0); ctx.lineTo(canvas.width / 2, canvas.height); ctx.stroke(); }
                 if (snapLineY) { ctx.beginPath(); ctx.moveTo(0, canvas.height / 2); ctx.lineTo(canvas.width, canvas.height / 2); ctx.stroke(); }
                 ctx.restore();
@@ -2756,7 +2949,7 @@
         // =========================================================
         function onStandardBgChange() { currentTemplateImg = null; currentTemplateId = null; const charRadio = document.querySelector('input[name="char_bg"]:checked'); if (charRadio) charRadio.checked = false; drawPreview(); saveState(); }
 
-       let currentSubjectDesignIndex = 0;
+        let currentSubjectDesignIndex = 0;
         function applySubjectTemplate(resetIndex = true) {
             if (!currentActiveTemplateObj) return;
             if (resetIndex) { currentSubjectDesignIndex = 0; }
@@ -2784,41 +2977,41 @@
             // 3. 마지막 데이터가 배열(시안 여러 개)인 경우 버튼 렌더링
             if (Array.isArray(targetData)) {
                 if (targetData.length > 1) {
-                    designSelector.style.display = 'flex'; 
+                    designSelector.style.display = 'flex';
                     designButtonsContainer.innerHTML = '';
                     targetData.forEach((src, idx) => {
-                        const btn = document.createElement('div'); 
-                        btn.className = 'design-btn' + (idx === currentSubjectDesignIndex ? ' active' : ''); 
+                        const btn = document.createElement('div');
+                        btn.className = 'design-btn' + (idx === currentSubjectDesignIndex ? ' active' : '');
                         btn.innerText = (idx + 1);
-                        btn.onclick = function () { 
-                            currentSubjectDesignIndex = idx; 
-                            applySubjectTemplate(false); 
+                        btn.onclick = function () {
+                            currentSubjectDesignIndex = idx;
+                            applySubjectTemplate(false);
                         };
                         designButtonsContainer.appendChild(btn);
                     });
-                } else { 
-                    designSelector.style.display = 'none'; 
+                } else {
+                    designSelector.style.display = 'none';
                 }
                 targetSrc = targetData[currentSubjectDesignIndex] || targetData[0];
-            } else { 
-                designSelector.style.display = 'none'; 
-                targetSrc = targetData; 
+            } else {
+                designSelector.style.display = 'none';
+                targetSrc = targetData;
             }
 
             // 4. 최종 캔버스에 그리기
             if (targetSrc && typeof targetSrc === 'string' && targetSrc.trim() !== '') {
                 loadTemplateImage(targetSrc);
             } else {
-                currentTemplateImg = null; 
-                drawPreview(); 
+                currentTemplateImg = null;
+                drawPreview();
                 CustomModal.alert('안내', '이미지가 아직 등록되지 않았습니다.');
             }
 
-                // 🌟 마법사 로직: 화면에 표시할 옵션이 있는지 확인하고 정렬 방식을 바꿈
+            // 🌟 마법사 로직: 화면에 표시할 옵션이 있는지 확인하고 정렬 방식을 바꿈
             const topBarWrap = document.getElementById('workspace-top-bar');
             const subjectInner = document.getElementById('subject-selector-inner');
             const divider = document.getElementById('top-bar-divider');
-            
+
             const hasSubject = subjectInner.style.display !== 'none';
             const hasDesign = designSelector.style.display !== 'none';
 
@@ -2833,76 +3026,109 @@
             }
         }
 
-       function loadTemplateImage(src) {
+        function loadTemplateImage(src) {
             const img = new Image();
             img.crossOrigin = "Anonymous"; // 🌟 외부 이미지 허용
             img.onload = function () {
-                currentTemplateImg = img; 
-                const bgRadio = document.querySelector('input[name="bg"]:checked'); 
+                currentTemplateImg = img;
+                const bgRadio = document.querySelector('input[name="bg"]:checked');
                 if (bgRadio) bgRadio.checked = false;
-                if (isInitialText) { textItems = []; isInitialText = false; } 
-                drawPreview(); 
+                if (isInitialText) { textItems = []; isInitialText = false; }
+                drawPreview();
                 saveState();
             };
-            
+
             // 🌟 브라우저 캐시 우회 (주소 끝에 현재 시간 붙이기)
             const cacheBuster = src.includes('?') ? '&t=' : '?t=';
             img.src = src.startsWith('data:') ? src : src + cacheBuster + new Date().getTime();
         }
 
-      function applyTemplate(sizeType, tmplObj, btn) {
-            currentTemplateId = tmplObj.id || null; 
+        function applyTemplate(sizeType, tmplObj, btn) {
+            currentTemplateId = tmplObj.id || null;
             currentActiveTemplateObj = tmplObj;
-            
-            const sizeRadio = document.querySelector(`input[name="canvasSize"][value="${sizeType}"]`); 
+
+            // ==========================================
+            // 🌟 새롭게 추가된 기능: 스마트 사이즈 자동 변환
+            // ==========================================
+            let hasSquare = true;
+            let hasA4 = true;
+
+            // 템플릿 안에 사이즈 데이터가 어떻게 들어있는지 확인
+            if (tmplObj && typeof tmplObj.src === 'object') {
+                if (tmplObj.isMultiSubject) {
+                    const sampleSub = tmplObj.src.math || tmplObj.src.eng || tmplObj.src.both || {};
+                    hasSquare = !!sampleSub.square;
+                    hasA4 = !!sampleSub.a4;
+                } else {
+                    hasSquare = !!tmplObj.src.square;
+                    hasA4 = !!tmplObj.src.a4;
+                }
+            }
+
+            // 상단 툴바에서 없는 사이즈 버튼 숨기기
+            const lblSquare = document.getElementById('lbl-size-square');
+            const lblA4 = document.getElementById('lbl-size-a4');
+            if (lblSquare) lblSquare.style.display = hasSquare ? 'flex' : 'none';
+            if (lblA4) lblA4.style.display = hasA4 ? 'flex' : 'none';
+
+            // 현재 누른 템플릿이 지금 화면 사이즈(sizeType)를 지원 안 하면, 있는 쪽으로 강제 변경!
+            if (sizeType === 'square' && !hasSquare && hasA4) {
+                sizeType = 'a4'; // 1:1이 없으면 강제로 A4로 바꿈
+            } else if (sizeType === 'a4' && !hasA4 && hasSquare) {
+                sizeType = 'square'; // A4가 없으면 강제로 1:1로 바꿈
+            }
+            // ==========================================
+
+            // 🌟 여기서부터는 네 원본 코드와 100% 동일 (안전함!)
+            const sizeRadio = document.querySelector(`input[name="canvasSize"][value="${sizeType}"]`);
             if (sizeRadio) { sizeRadio.checked = true; }
-            
-            let tempId = currentTemplateId; 
-            currentTemplateId = null; 
-            changeCanvasSize(sizeType); 
+
+            let tempId = currentTemplateId;
+            currentTemplateId = null;
+            changeCanvasSize(sizeType);
             currentTemplateId = tempId;
 
-            document.querySelectorAll('.tmpl-btn').forEach(b => b.classList.remove('active')); 
+            document.querySelectorAll('.tmpl-btn').forEach(b => b.classList.remove('active'));
             if (btn && btn.classList.contains('tmpl-btn')) btn.classList.add('active');
 
             const subjectSelector = document.getElementById('subject-selector');
 
             if (tmplObj.projectData) {
-                subjectSelector.style.display = 'none'; 
-                isInitialText = false; 
+                subjectSelector.style.display = 'none';
+                isInitialText = false;
                 const data = tmplObj.projectData;
                 if (data.bgType) { const bgRadio = document.querySelector(`input[name="bg"][value="${data.bgType}"]`); if (bgRadio) bgRadio.checked = true; }
-                
+
                 // 🌟 프로젝트 이미지 불러오기 보안 설정
-                if (data.templateSrc) { 
-                    const img = new Image(); 
+                if (data.templateSrc) {
+                    const img = new Image();
                     img.crossOrigin = "Anonymous"; // 추가됨
-                    img.onload = () => { currentTemplateImg = img; drawPreview(); saveState(); }; 
-                    img.src = data.templateSrc; 
+                    img.onload = () => { currentTemplateImg = img; drawPreview(); saveState(); };
+                    img.src = data.templateSrc;
                 } else { currentTemplateImg = null; }
-                
+
                 textItems = JSON.parse(JSON.stringify(data.textItems || []));
                 logoItems = []; document.querySelectorAll('.brand-check').forEach(cb => cb.checked = false);
-                
+
                 // 🌟 로고 불러오기 보안 설정
-                if (data.logoItems) { 
-                    data.logoItems.forEach(l => { 
-                        const img = new Image(); 
+                if (data.logoItems) {
+                    data.logoItems.forEach(l => {
+                        const img = new Image();
                         img.crossOrigin = "Anonymous"; // 추가됨
-                        img.onload = () => { drawPreview(); }; 
-                        img.onerror = () => { drawPreview(); }; 
-                        img.src = logoData[l.brand] || ''; 
-                        logoItems.push({ ...l, img: img }); 
-                        const cb = document.querySelector(`input.brand-check[value="${l.brand}"]`); 
-                        if (cb) cb.checked = true; 
-                    }); 
+                        img.onload = () => { drawPreview(); };
+                        img.onerror = () => { drawPreview(); };
+                        img.src = logoData[l.brand] || '';
+                        logoItems.push({ ...l, img: img });
+                        const cb = document.querySelector(`input.brand-check[value="${l.brand}"]`);
+                        if (cb) cb.checked = true;
+                    });
                 }
-                
+
                 iconItems = [];
                 if (data.iconItems) { data.iconItems.forEach(i => { const img = new Image(); img.onload = () => { drawPreview(); }; img.src = i.src; iconItems.push({ ...i, img: img }); }); }
                 selectedItem = null; document.getElementById('customText').value = ''; drawPreview(); if (!data.templateSrc) saveState();
 
-           } else if (tmplObj.isMultiSubject || typeof tmplObj.src === 'object') {
+            } else if (tmplObj.isMultiSubject || typeof tmplObj.src === 'object') {
                 // 🌟 수정됨: 전체 박스를 끄는게 아니라 내부 옵션만 제어
                 document.getElementById('subject-selector-inner').style.display = tmplObj.isMultiSubject ? 'flex' : 'none';
                 applySubjectTemplate();
@@ -2925,16 +3151,16 @@
             // UI 버튼 색상 활성화
             document.getElementById('lbl-size-square').classList.remove('active');
             document.getElementById('lbl-size-a4').classList.remove('active');
-            if(sizeType === 'square') {
+            if (sizeType === 'square') {
                 document.getElementById('lbl-size-square').classList.add('active');
             } else {
                 document.getElementById('lbl-size-a4').classList.add('active');
             }
 
-            if (sizeType === 'square') { canvas.width = 1080; canvas.height = 1080; document.getElementById('panel-square').style.display = 'flex'; document.getElementById('panel-a4').style.display = 'none'; } 
+            if (sizeType === 'square') { canvas.width = 1080; canvas.height = 1080; document.getElementById('panel-square').style.display = 'flex'; document.getElementById('panel-a4').style.display = 'none'; }
             else if (sizeType === 'a4') { canvas.width = 1080; canvas.height = 1527; document.getElementById('panel-square').style.display = 'none'; document.getElementById('panel-a4').style.display = 'flex'; }
             canvas.style.aspectRatio = '';
-            
+
             if (currentActiveTemplateObj && currentTemplateId && currentTemplateId.startsWith('f_')) {
                 document.querySelectorAll('.tmpl-btn').forEach(b => b.classList.remove('active')); const newBtn = document.getElementById(`btn_${currentActiveTemplateObj.id}_${sizeType}`); if (newBtn) newBtn.classList.add('active');
                 applySubjectTemplate(false);
