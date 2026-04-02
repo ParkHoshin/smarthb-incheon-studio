@@ -1083,18 +1083,67 @@
 <body>
 
    <div style="width: 0; height: 0; overflow: hidden; position: absolute; left: -9999px;">
+        
+        <style>
+            .login-bg-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #0f172a; overflow: hidden; }
+            .login-slide {
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                background-size: cover; background-position: center;
+                opacity: 0; 
+                animation: bgSlide 18s infinite; /* 18초 동안 3장 반복 */
+            }
+          /* 🌟 확정된 이미지 3장 */
+            .login-slide:nth-child(1) {
+                background-image: url('https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=2000&auto=format&fit=crop');
+                animation-delay: 0s;
+            }
+            .login-slide:nth-child(2) {
+                background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
+                animation-delay: 6s;
+            }
+            .login-slide:nth-child(3) {
+                background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop');
+                animation-delay: 12s;
+            }
+
+            /* 부드럽게 겹치고 살짝 줌인되는 고급 효과 */
+            @keyframes bgSlide {
+                0%, 28% { opacity: 1; transform: scale(1); }
+                33%, 95% { opacity: 0; transform: scale(1.05); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+
+            /* 🌟 밝아진 필터 효과 (투명도를 낮춰서 이미지가 화사하게 보임!) */
+            .login-overlay-filter {
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                /* 기존 0.7 ~ 0.85 였던 진한 투명도를 0.3 ~ 0.5로 낮췄어! */
+                background: linear-gradient(rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.2));
+            }
+        </style>
+
         <div id="loginOverlay"
-            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-                   /* 1. 배경 이미지 설정: 어두운 필터를 깔아서 글씨가 잘 보이게 함 */
-                   background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), 
-                               url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat; 
-                   z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             
-            <div style="text-align: center; margin-bottom: 35px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
-                <h1 style="font-size: 32px; margin-bottom: 12px; font-weight: 800; letter-spacing: -1px;">
-                    원장님의 열정이 아이들의 밝은 미래를 만듭니다.
+            <div class="login-bg-slider">
+                <div class="login-slide"></div>
+                <div class="login-slide"></div>
+                <div class="login-slide"></div>
+                <div class="login-overlay-filter"></div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 35px;">
+                <h1 style="font-size: 32px; margin-bottom: 12px; font-weight: 800; letter-spacing: -1px;
+                           color: #f8fafc; /* 완전 흰색보다 살짝 차분한 색이 음각에 잘 어울려요 */
+                           /* 👇 마법의 음각 그림자 코드 */
+                           text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.4), 
+                                         2px 2px 4px rgba(0, 0, 0, 0.8),     
+                                         0px 0px 15px rgba(0, 0, 0, 0.5);">                
+			       원장님의 열정이 아이들의 밝은 미래를 만듭니다.
                 </h1>
-                <p style="font-size: 17px; opacity: 0.9; margin: 0; font-weight: 500;">
+                <p style="font-size: 17px; margin: 0; font-weight: 600;
+                          color: #e2e8f0;
+                          text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+                                        1px 1px 3px rgba(0, 0, 0, 0.8);">
                     오늘도 스마트해법과 함께 힘찬 하루 되세요! ☀️
                 </p>
             </div>
